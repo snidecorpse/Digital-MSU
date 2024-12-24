@@ -1,0 +1,164 @@
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif; 
+}
+
+
+.model-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  user-select: none; 
+  position: relative; 
+  background: #000;
+}
+
+
+.viewer {
+  background: #000;
+  overflow: hidden;
+  transition: flex-basis 0.3s ease, width 0.3s ease; 
+}
+
+
+.divider {
+  width: 3px;
+  background: #e0e0e0; 
+  cursor: col-resize;
+  z-index: 1;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.divider:hover {
+  background-color: #18453B; 
+}
+
+/* Right side: HTML UI */
+.ui {
+  flex-grow: 1; 
+  background: #222; 
+  color: #ffffff; 
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+  align-items: flex-start; 
+  justify-content: flex-start; 
+  overflow: hidden; 
+}
+
+
+.floating-window-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e0e0e0; 
+  color: #333; 
+  border: none;
+  padding: 8px;
+  border-radius: 50%; 
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.floating-window-button:hover {
+  background: #18453B; 
+  color: white;
+  transform: scale(1.1); 
+}
+
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
+  gap: 10px;
+  width: 100%;
+}
+
+.ui button {
+  background: #e0e0e0; 
+  border: none;
+  padding: 10px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease; /*idk why this shi red*/
+}
+
+.ui button:hover {
+  background: #18453B; 
+  color: white; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.ui button:active {
+  transform: translateY(1px); 
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+
+.resize-indicator {
+  position: absolute;
+  pointer-events: none; 
+  color: white;
+  background: #b30000; 
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: opacity 0.2s ease;
+}
+
+/* Red Line */
+.resize-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff0000; 
+  z-index: 9;
+  transform: translateX(-50%);
+  transition: background-color 0.2s ease;
+}
+
+.floating-window-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e0e0e0;
+  color: #ee0000; 
+  border: none;
+  width: 5px; 
+  height: 5px; 
+  border-radius: 100%; 
+  cursor: pointer;
+  font-size: 190px; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.floating-window-button:hover {
+  background: #ff0000; 
+  color: white; 
+  transform: scale(1.1);
+}
